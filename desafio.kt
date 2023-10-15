@@ -1,21 +1,49 @@
-// [Template no Kotlin Playground](https://pl.kotl.in/WcteahpyN)
+// Desafio do Bootcamp Santander 2023
+// Objetivo : fazer um código simples que possibilite matricular alunos em diferentes formações 
 
-enum class Nivel { BASICO, INTERMEDIARIO, DIFICIL }
-
-class Usuario
-
-data class ConteudoEducacional(var nome: String, val duracao: Int = 60)
-
-data class Formacao(val nome: String, var conteudos: List<ConteudoEducacional>) {
-
-    val inscritos = mutableListOf<Usuario>()
+// Declaração de 4 variáveis utilizadas para armazenar as listas de alunos e formações
+var matriculados  = mutableListOf<String>()
+var lista_mobile  = mutableListOf<String>()
+var lista_java    = mutableListOf<String>()
+var lista_angular = mutableListOf<String>()
     
-    fun matricular(usuario: Usuario) {
-        TODO("Utilize o parâmetro $usuario para simular uma matrícula (usar a lista de $inscritos).")
-    }
+fun main()
+{
+    // chamadas da função que realiza as matrículas em 3 formações de exemplo 
+    matricular("Mauricio", "Mobile")                                             
+    matricular("Caio" , "Java")
+    matricular("Paulo" , "Angular")
+    matricular("Jose", "Mobile")                                             
+    matricular("Pedro" , "Java")
+    matricular("Chico" , "Mobile")
+      
+    // o programa lista os alunos matriculados nos 3 cursos
+    println ("----- Lista de alunos matriculados em Mobile---")
+    println (lista_mobile + "    " + lista_mobile.size + "alunos")
+    println ("                                                   ")
+    
+    println ("----- Lista de alunos matriculados em Java---")
+    println (lista_java + "    " + lista_java.size + "alunos")
+    println ("                                                   ")
+    
+    println ("----- Lista de alunos matriculados em Angular---")
+    println (lista_angular + "    " + lista_angular.size + "alunos")
+    println ("                                                   ")
+        
 }
 
-fun main() {
-    TODO("Analise as classes modeladas para este domínio de aplicação e pense em formas de evoluí-las.")
-    TODO("Simule alguns cenários de teste. Para isso, crie alguns objetos usando as classes em questão.")
+// --------------função que realiza as matriculas ---------------------
+  
+fun matricular(aluno: String, formacao: String) 
+{
+    
+    matriculados.add(aluno)
+
+    if (formacao == "Mobile") lista_mobile.add(aluno)
+    
+    if (formacao == "Java")   lista_java.add(aluno)
+              
+    if (formacao == "Angular") lista_angular.add(aluno)
+       
+             
 }
